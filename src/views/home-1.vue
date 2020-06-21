@@ -7,7 +7,7 @@
 		</p>
 		<p @click="openDialog">
 			iconfont:
-			<i class="iconfont icon-weibo"></i>
+			<i  style="color:red;font-size:48px;"  class="iconfont icon-logo"></i>
 		</p>
 		<transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
 			<div v-if="show">

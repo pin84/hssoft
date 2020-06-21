@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import {sessionSetItem} from '../common/util'
 
 // 按需（懒）加载
-const Home = () => import( /* webpackChunkName: "home" */ '../views/home')
+const Home = () => import( /* webpackChunkName: "home" */ '../views/home/home')
 const My = () => import( /* webpackChunkName: "home" */ '../views/my')
 
 Vue.use(Router)
@@ -26,7 +26,12 @@ const router = new Router({
         {
             path: '*',
             redirect: '/'
-        }
+        },
+        {
+            path: '/businesslicense',
+            name:'businesslicense',
+            component:()=> import('@/views/policy/Businesslicense')
+        },
     ],
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {

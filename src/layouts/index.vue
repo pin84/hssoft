@@ -3,7 +3,7 @@
 		<div class="content-container">
 			<slot></slot>
 		</div>
-		<TabBar v-show="isBar"/>
+		<TabBar v-if="isBar"/>
 	</div>
 </template>
 
@@ -21,7 +21,7 @@
 		computed: {
 			// 除首页、我的，其他页面不显示tabBar，需要显示的添加到白名单即可
 			isBar() {
-				let whiteNameList = ["demoPage", "home", "my"];
+				let whiteNameList = ["demoPage", "my"];
 				if (whiteNameList.includes(this.$route.name)) {
 					return true;
 				}
@@ -35,7 +35,7 @@
 	.layout-container {
 		height: 100vh;
 		.content-container {
-			height: calc(100vh - 60px);
+			// height: calc(100vh - 60px);
 			overflow-x: hidden;
 			overflow-y: scroll;
 		}

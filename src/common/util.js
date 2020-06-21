@@ -112,6 +112,7 @@ export const randomWord = (randomFlag, min, max) => {
     return str;
 };
 
+
 /**
  * 获取url后参数
  */
