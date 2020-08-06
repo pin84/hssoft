@@ -32,6 +32,13 @@ const router = new Router({
             name:'businesslicense',
             component:()=> import('@/views/policy/Businesslicense')
         },
+        {
+            path: '/about',
+            name:'about',
+            component:()=> import('@/views/about/index')
+        },
+
+
     ],
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {

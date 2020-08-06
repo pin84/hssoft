@@ -7,6 +7,8 @@
 
     <HomeP1 />
     <HomeP2 />
+    <HomeP3 />
+    <HomeP4 />
 
     <!-- <Footer /> -->
   </div>
@@ -17,6 +19,8 @@ export default {
   components: {
     HomeP1: () => import("./HomeP1"),
     HomeP2: () => import("./HomeP2"),
+    HomeP3: () => import("./HomeP3"),
+    HomeP4: () => import("./HomeP4"),
     // Footer: () => import("../foot/Footer")
   },
 

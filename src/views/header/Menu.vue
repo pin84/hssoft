@@ -3,7 +3,12 @@
     <div></div>
 
     <ul class="list">
-      <li class="item" v-for="(item,index) in menuList" :key="index">{{item}}</li>
+      <li
+        @click="toPage(item)"
+        class="item"
+        v-for="(item,index) in menuList"
+        :key="index"
+      >{{item.name}}</li>
     </ul>
   </div>
 </template>
@@ -12,8 +17,23 @@
 export default {
   data() {
     return {
-      menuList: ["技术支持", "技术支持", "技术支持", "技术支持", "技术支持"]
+      menuList: [
+        { name: "home", router: "/" },
+        { name: "关于汉水", router: "/about" },
+        { name: "支持服务", router: "/" },
+        { name: "联系我们", router: "/" }
+      ]
     };
+  },
+
+  methods: {
+    toPage(item) {
+      let { fullPath } = this.$route;
+      if (fullPath !== item.router) {
+        this.$router.push(item.router);
+      }
+      this.$emit("closeMenu");
+    }
   }
 };
 </script>

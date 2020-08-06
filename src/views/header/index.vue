@@ -2,12 +2,12 @@
   <div class="header-wrapper">
     <header>
       <i class="iconfont" :class="isScale ? 'icon-caidan': 'icon-cha1'" @click="showMenu"></i>
-      <i style="color:red;" class="iconfont icon-logo"></i>
+      <i @click="toHome" style="color:red;" class="iconfont icon-logo"></i>
       <i class="iconfont icon-lock"></i>
     </header>
 
     <div class="menu" :class="{'isScale':isScale}">
-      <Menu />
+      <Menu  @closeMenu='showMenu'/>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@
 export default {
   data() {
     return {
-      isScale: false
+      isScale: true
     };
   },
 
@@ -24,6 +24,9 @@ export default {
     Menu: () => import("./Menu")
   },
   methods: {
+    toHome(){
+      // this.$router.push('./');
+    },
     showMenu() {
       this.isScale = !this.isScale;
     }
@@ -54,7 +57,7 @@ export default {
     top 0
     box-sizing border-box
     padding-top 50px
-    transition 1s
+    transition 0.3s
     transform-origin  center top
     transform scaleY(1)
     &.isScale
